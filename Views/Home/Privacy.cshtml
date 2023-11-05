@@ -1,0 +1,30 @@
+﻿@model List<conectionMysql.Models.Mascota>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Mascotas</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Edad</th>
+                <th>Tiene Pelo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Mascota mascota in @Model)
+            {
+                <tr>
+                    <td>@mascota.Nombre</td>
+                    <td>@mascota.Tipo</td>
+                    <td>@mascota.Edad</td>
+                    <td>@(mascota.TienePelo ? "Sí" : "No")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
